@@ -112,7 +112,7 @@ app.post('/query', (req, res) => {
         });
     } else {
         res.json({ 
-            error: "Query not recognized. Please try one of the predefined queries.",
+            error: "Query not recognized. ",
             availableQueries: Object.keys(predefinedQueries)
         });
     }
