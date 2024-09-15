@@ -1,0 +1,18 @@
+{
+  "top-selling products": {
+    "sql": "SELECT product_name, SUM(quantity_sold) as total_sold FROM sales GROUP BY product_name ORDER BY total_sold DESC LIMIT 5;",
+    "description": "Fetches the top 5 products with the highest total sales."
+  },
+  "least-selling products": {
+    "sql": "SELECT product_name, SUM(quantity_sold) as total_sold FROM sales GROUP BY product_name ORDER BY total_sold ASC LIMIT 5;",
+    "description": "Fetches the bottom 5 products with the lowest total sales."
+  },
+  "overstocked products": {
+    "sql": "SELECT product_name, stock FROM inventory WHERE stock > threshold ORDER BY stock DESC;",
+    "description": "Fetches products with stock levels above a predefined threshold."
+  },
+  "understocked products": {
+    "sql": "SELECT product_name, stock FROM inventory WHERE stock < threshold ORDER BY stock ASC;",
+    "description": "Fetches products with stock levels below a predefined threshold."
+  }
+}
